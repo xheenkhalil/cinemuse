@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMuse | Vanilla Movie Discovery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="sticky-nav">
+        <button id="menu-toggle" class="icon-button" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="logo">
+            <strong>CineMuse</strong>
+        </div>
+        
+        <div class="header-actions">
+            <button id="account-icon" class="icon-button" aria-label="Account Settings">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <button id="theme-toggle" class="icon-button" aria-label="Toggle Dark/Light Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav id="side-menu" class="side-menu-overlay">
+        <div class="side-menu-content">
+            <button id="menu-close" class="close-button">&times;</button>
+            <h2>CineMuse Menu</h2>
+            
+            <ul id="menu-categories">
+                <li><a href="#" data-endpoint="/trending/movie/week"><i class="fas fa-fire"></i> Trending Now</a></li>
+                <li><a href="#" data-endpoint="/movie/popular"><i class="fas fa-star"></i> Popular Movies</a></li>
+                <li><a href="#" data-endpoint="/movie/top_rated"><i class="fas fa-trophy"></i> Top Rated</a></li>
+                <li><a href="#" data-endpoint="/movie/upcoming"><i class="fas fa-calendar"></i> Upcoming</a></li>
+                </ul>
+            
+            <hr>
+            
+            <ul>
+                <li><a href="#" id="view-watchlist-link"><i class="fas fa-list"></i> My Watchlist</a></li>
+                <li><a href="#" id="view-recommendations-link"><i class="fas fa-lightbulb"></i> Recommendations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="search-section">
+            <form id="search-form">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search for a movie title..." 
+                    aria-label="Movie Search"
+                >
+                <button type="submit" class="icon-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </section>
+
+        <section class="content-sections">
+            
+            <section id="trending-section">
+                <h2>Trending Now</h2> 
+                <div id="movie-grid" class="movie-grid">
+                    </div>
+
+                <div id="pagination-controls" class="pagination-controls" style="display: none;">
+                    <button id="prev-page-btn" class="card-action-btn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span id="current-page-display">Page 1</span>
+                    <button id="next-page-btn" class="card-action-btn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <section id="top-rated-section">
+                <h2>Top Rated Movies</h2>
+                <div id="top-rated-grid" class="movie-grid">
+                    </div>
+            </section>
+
+            <h2 id="watchlist-title" style="display: none;">Your Watchlist</h2>
+            <div id="watchlist-grid" class="movie-grid"></div>
+            
+            <h2 id="recommendations-title" style="display: none;">Recommended for You</h2>
+            <div id="recommendations-grid" class="movie-grid"></div>
+        </section>
+    </main>
+
+    <div id="movie-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="close-button">&times;</button>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script> </body>
+
+ <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 CineMuse | Vanilla Edition</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+    </div>
+    <div class="api-attribution">
+        <p>Powered by <a href="https://www.xheenlabs.org/" target="_blank">Xheenlabs</a></p>
+    </div>
+</footer>
+</html>
